@@ -7,14 +7,28 @@
 //
 
 #import "ViewController.h"
+#import "PlayingCardDeck.h"
 
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (nonatomic) int filpsCount;
+@property (nonatomic, strong) Deck *deck;
 @end
 
 @implementation ViewController
+
+- (Deck *)deck {
+    if (!_deck) {
+        _deck = [self createDeck];
+    }
+    
+    return _deck;
+}
+
+- (Deck *)createDeck {
+    return [[PlayingCardDeck alloc] init];
+}
 
 - (void) setFilpsCount:(int)filpsCount {
     _filpsCount = filpsCount;
@@ -25,11 +39,16 @@
     if ([sender.currentTitle length]) {
         [sender setBackgroundImage:[UIImage imageNamed:@"cardback"] forState:UIControlStateNormal];
         [sender setTitle:@"" forState:UIControlStateNormal];
+        self.filpsCount++;
     } else {
-        [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
-        [sender setTitle:@"A♣︎" forState:UIControlStateNormal];
+        Card *card = [self.deck drawRandomCard];
+        if (card) {
+            [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
+            [sender setTitle:card.contents forState:UIControlStateNormal];
+            self.filpsCount++;
+        }
     }
-    self.filpsCount++;
+    
 }
 
 @end
