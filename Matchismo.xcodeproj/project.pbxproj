@@ -162,11 +162,11 @@
 				B3F1615E1CE7073B00DAE8B5 /* CardMatchingGame.h */,
 				B3F1615F1CE7073B00DAE8B5 /* CardMatchingGame.m */,
 				B3F161511CE5AAC800DAE8B5 /* Card.h */,
+				B3F161521CE5AAC800DAE8B5 /* Card.m */,
 				B3F161551CE5ACCA00DAE8B5 /* Deck.h */,
 				B3F161561CE5ACCA00DAE8B5 /* Deck.m */,
 				B3F161581CE5B09C00DAE8B5 /* PlayingCard.h */,
 				B3F161591CE5B09C00DAE8B5 /* PlayingCard.m */,
-				B3F161521CE5AAC800DAE8B5 /* Card.m */,
 				B3F1615B1CE5B70400DAE8B5 /* PlayingCardDeck.h */,
 				B3F1615C1CE5B70400DAE8B5 /* PlayingCardDeck.m */,
 			);
@@ -240,6 +240,7 @@
 				TargetAttributes = {
 					B3C59D1B1CE4739D00172C51 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = DE6Z84BVT2;
 					};
 					B3C59D341CE4739E00172C51 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -454,10 +455,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Matchismo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = buaa.Matchismo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -466,10 +469,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Matchismo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = buaa.Matchismo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
